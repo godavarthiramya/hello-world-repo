@@ -1,5 +1,14 @@
 name: Hello World
-on: push
+on: 
+  workflow_dispatch:
+    inputs:
+      test_suite:
+        description: Test suite
+        type: choice
+        value: functional
+        options:
+          - regression
+
 jobs:
   hello-job: 
     runs-on: ubuntu-latest
